@@ -1,0 +1,151 @@
+@keyframes rotateAnimation {
+	0% {
+		transform: rotateX(0deg);
+	}
+	50% {
+		transform: rotateX(90deg);
+		color: white;
+	}
+	100% {
+		transform: rotateX(0deg);
+		color: white;
+		border: none;
+	}
+}
+
+@keyframes scaleAnimation {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.letter-absent {
+	background-color: #a3a3a3;
+	color: grey;
+	border: 2px solid rgba(128, 128, 128, 0.569);
+	font-weight: 700;
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+	text-transform: uppercase;
+	animation: rotateAnimation 0.3s alternate forwards;
+}
+
+.letter-box {
+	background-color: white;
+	color: grey;
+	font-weight: 700;
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	border: 2px solid rgba(194, 194, 194, 0.569);
+	text-transform: capitalize;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+}
+
+.letter-box-active {
+	background-color: white;
+	color: grey;
+	font-weight: 700;
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	border: 2px solid rgba(128, 128, 128, 0.569);
+	text-transform: capitalize;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+	transform-origin: center;
+	animation: scaleAnimation 0.2s alternate forwards;
+}
+
+.letter-correct {
+	background-color: #65a30d;
+	border: 2px solid rgba(128, 128, 128, 0.569);
+	color: white;
+	font-weight: 700;
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+	text-transform: uppercase;
+	transition-property: background-color, color;
+	transition-delay: 150ms;
+	animation: rotateAnimation 0.3s alternate forwards;
+}
+
+.letter-present {
+	background-color: #fbbf24;
+	border: 2px solid rgba(128, 128, 128, 0.569);
+	color: white;
+	font-weight: 700;
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
+	text-transform: uppercase;
+	transition-property: background-color, color;
+	transition-delay: 150ms;
+	animation: rotateAnimation 0.3s alternate forwards;
+}
+
+.letter-absent:nth-child(1),
+.letter-present:nth-child(1),
+.letter-correct:nth-child(1) {
+	animation-delay: 0s;
+	transition-delay: 150ms;
+}
+.letter-absent:nth-child(2),
+.letter-present:nth-child(2),
+.letter-correct:nth-child(2) {
+	animation-delay: 0.3s;
+	transition-delay: 450ms;
+}
+.letter-absent:nth-child(3),
+.letter-present:nth-child(3),
+.letter-correct:nth-child(3) {
+	animation-delay: 0.6s;
+	transition-delay: 750ms;
+}
+.letter-absent:nth-child(4),
+.letter-present:nth-child(4),
+.letter-correct:nth-child(4) {
+	animation-delay: 0.9s;
+	transition-delay: 1050ms;
+}
+.letter-absent:nth-child(5),
+.letter-present:nth-child(5),
+.letter-correct:nth-child(5) {
+	animation-delay: 1.2s;
+	transition-delay: 1350ms;
+}

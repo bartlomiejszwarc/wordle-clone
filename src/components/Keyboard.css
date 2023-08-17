@@ -1,0 +1,27 @@
+.normal-key {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: slategray;
+	width: 8rem;
+	color: #333;
+	font-size: 1.5rem;
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+	border-radius: 0.5rem;
+	font-weight: 500;
+}
+
+.wide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: slategray;
+	width: 8rem;
+	color: #333;
+	font-size: 1.5rem;
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+	border-radius: 0.5rem;
+	font-weight: 500;
+}
