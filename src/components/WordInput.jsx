@@ -5,9 +5,7 @@ import EndGameDialog from "./EndGameDialog";
 import Keyboard from "./Keyboard";
 
 function WordInput() {
-	const [fiveLetterWord, setFiveLetterWord] = useState(
-		"venus".toLocaleLowerCase()
-	);
+	const [fiveLetterWord, setFiveLetterWord] = useState("");
 	const [guess, setGuess] = useState("");
 	const [guesses, setGuesses] = useState([]);
 
@@ -34,25 +32,25 @@ function WordInput() {
 		setGuessNumber(guessNumber);
 	}, [guessNumber]);
 
-	// useEffect(() => {
-	// 	async function fetchFiveLetterWord() {
-	// 		try {
-	// 			const response = await fetch(
-	// 				"https://random-word-api.herokuapp.com/word?number=1&length=5&"
-	// 			);
-	// 			const data = await response.json();
-	// 			if (data[0]) {
-	// 				setFiveLetterWord(data[0]);
-	// 			} else {
-	// 				console.error("No word received from API");
-	// 			}
-	// 		} catch (error) {
-	// 			console.error("Error fetching data:", error);
-	// 		}
-	// 	}
+	useEffect(() => {
+		async function fetchFiveLetterWord() {
+			try {
+				const response = await fetch(
+					"https://random-word-api.herokuapp.com/word?number=1&length=5&"
+				);
+				const data = await response.json();
+				if (data[0]) {
+					setFiveLetterWord(data[0]);
+				} else {
+					console.error("No word received from API");
+				}
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		}
 
-	// 	fetchFiveLetterWord();
-	// }, []);
+		fetchFiveLetterWord();
+	}, []);
 
 	useEffect(() => {
 		const handleGlobalClick = (event) => {

@@ -40,7 +40,7 @@ function Keyboard({
 
 	let keyboardBottomRow = [
 		{
-			sign: "<=",
+			sign: "DEL",
 			class: tailwindClassExtraWideKey,
 			keyFromKeyboard: "backspace",
 		},
