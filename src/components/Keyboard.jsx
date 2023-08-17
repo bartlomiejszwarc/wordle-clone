@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Keyboard.css";
-function Keyboard({ handleKeyboardEvent }) {
+function Keyboard({
+	handleKeyboardEvent,
+	correctLetters,
+	presentLetters,
+	absentLetters,
+}) {
 	const tailwindClassNormalKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md w-6 py-2 uppercase rounded-lg font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md md:text-xl w-6 md:w-12 py-2 md:mx-1 uppercase rounded-lg font-medium";
 	const tailwindClassWideKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md py-2 w-[1.7rem] uppercase rounded-lg font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md text-md md:text-xl w-6 md:w-12 md:mx-1 py-2 w-[1.7rem] uppercase rounded-lg font-medium";
 	const tailwindClassExtraWideKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md py-2 px-1 uppercase rounded-lg font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md py-2 px-1 uppercase rounded-lg md:mx-1 font-medium";
 
 	let keyboardTopRow = [
 		{ sign: "q", class: tailwindClassNormalKey, keyFromKeyboard: "q" },
@@ -61,6 +66,15 @@ function Keyboard({ handleKeyboardEvent }) {
 						<button
 							className={key.class}
 							key={index}
+							style={
+								correctLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#65a30d", color: "white" }
+									: presentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#fbbf24", color: "white" }
+									: absentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#94a3b8", color: "white" }
+									: {}
+							}
 							onClick={(event) => handleKeyboardEvent(key.keyFromKeyboard)}>
 							{key.sign}
 						</button>
@@ -71,6 +85,15 @@ function Keyboard({ handleKeyboardEvent }) {
 						<button
 							className={key.class}
 							key={index}
+							style={
+								correctLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#65a30d", color: "white" }
+									: presentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#fbbf24", color: "white" }
+									: absentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#94a3b8", color: "white" }
+									: {}
+							}
 							onClick={(event) => handleKeyboardEvent(key.keyFromKeyboard)}>
 							{key.sign}
 						</button>
@@ -81,6 +104,15 @@ function Keyboard({ handleKeyboardEvent }) {
 						<button
 							className={key.class}
 							key={index}
+							style={
+								correctLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#65a30d", color: "white" }
+									: presentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#fbbf24", color: "white" }
+									: absentLetters.includes(key.keyFromKeyboard)
+									? { backgroundColor: "#94a3b8", color: "white" }
+									: {}
+							}
 							onClick={(event) => handleKeyboardEvent(key.keyFromKeyboard)}>
 							{key.sign}
 						</button>
