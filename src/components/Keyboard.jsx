@@ -7,11 +7,11 @@ function Keyboard({
 	absentLetters,
 }) {
 	const tailwindClassNormalKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md md:text-xl w-6 md:w-12 py-2 md:mx-1 uppercase rounded-lg font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md md:text-xl w-8 mx-1 md:w-12 py-2 md:mx-1 uppercase rounded-lg font-medium shadow-lg";
 	const tailwindClassWideKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md text-md md:text-xl w-6 md:w-12 md:mx-1 py-2 w-[1.7rem] uppercase rounded-lg font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md text-md md:text-xl mx-1 w-8 md:w-12 md:mx-1 py-2 w-[1.7rem] uppercase rounded-lg font-medium shadow-lg";
 	const tailwindClassExtraWideKey =
-		"flex items-center justify-center bg-slate-300 text-slate-800 text-md py-2 px-1 uppercase rounded-lg md:mx-1 font-medium";
+		"flex items-center justify-center bg-slate-300 text-slate-800 text-md py-2 px-1 mx-1 uppercase rounded-lg md:mx-1 font-medium shadow-lg";
 
 	let keyboardTopRow = [
 		{ sign: "q", class: tailwindClassNormalKey, keyFromKeyboard: "q" },
@@ -60,7 +60,7 @@ function Keyboard({
 
 	return (
 		<>
-			<div className="w-full flex flex-col space-y-2">
+			<div className="w-11/12 md:w-full flex flex-col space-y-2 md:px-0">
 				<div className="w-full flex justify-between">
 					{keyboardTopRow.map((key, index) => (
 						<button

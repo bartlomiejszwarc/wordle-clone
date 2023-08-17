@@ -104,8 +104,10 @@ function WordInput() {
 	};
 
 	const handleKeyboardEvent = (event) => {
-		if (/^[a-zA-Z]+$/.test(event) && event.length === 1) {
-			setInput((input) => input.concat(event));
+		if (input.length < 5) {
+			if (/^[a-zA-Z]+$/.test(event) && event.length === 1) {
+				setInput((input) => input.concat(event));
+			}
 		}
 		if (event === "backspace") {
 			setInput((input) => input.slice(0, -1));
@@ -138,7 +140,7 @@ function WordInput() {
 			<div className="flex flex-col space-y-6 items-center w-full">
 				<button
 					onClick={handleGuessClick}
-					className="px-3 py-1 bg-sky-700 text-neutral-50 text-2xl rounded-lg w-1/3">
+					className="px-3 py-1 bg-sky-700 text-neutral-50 text-2xl rounded-lg w-1/3 shadow-lg">
 					Guess!
 				</button>
 				<Keyboard
